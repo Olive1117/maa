@@ -1,11 +1,93 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {},
+    "点击记住账号": {
+        "recognition": "OCR",
+        "expected":"记住账号",
+        "next": [
+            "点击长按勾选"
+        ]
+    },
+    "点击长按勾选": {
+        "action": "LongPress",
+        "target": "点击记住账号",
+        "target_offset": [-50, 0, 0, 0],
+        "duration": 100
+    },
+    "点击勾选": {
+        "action": "Click",
+        "target": [421, 482, 10, 10]
+    },
+    "点击代理": {
+        "recognition": "OCR",
+        "expected":"代理",
+        "action": "Click"
+    },
     "MyTask4": {
         "recognition": "Custom",
         "custom_recognition": "my_reco_222",
         "action": "Custom",
         "custom_action": "my_action_111"
+    },
+    "进入游戏": {
+        "action": "LongPress",
+        "target": [611, 403, 0, 0],
+        "duration": 500,
+        "next": [
+            "预备输入账号"
+        ]
+    },
+    "预备输入账号": {
+        "action": "LongPress",
+        "target": [600, 403, 0, 0],
+        "duration": 500,
+        "next": [
+            "输入账号"
+        ]
+    },
+    "输入账号": {
+        "action": "InputText",
+        "input_text": "89",
+        "next": [
+            "预备输入密码"
+        ]
+    },
+    "预备输入密码": {
+        "action": "LongPress",
+        "target": [500, 446, 0, 0],
+        "duration": 500,
+        "next": [
+            "输入密码"
+        ]
+    },
+    "输入密码": {
+        "action": "InputText",
+        "input_text": "13553348172",
+        "next": [
+            "点击确定"
+        ]
+    },
+    "点击确定": {
+        "recognition": "OCR",
+        "expected":"确定",
+        "action": "LongPress",
+        "duration": 300,
+        "post_wait_freezes": 1000,
+        "next": [
+            "点击登陆游戏"
+        ]
+    },
+    "点击登陆游戏": {
+        "action": "LongPress",
+        "target": [481, 676, 0, 0],
+        "duration": 300,
+        "post_wait_freezes": 1000,
+        "next": [
+            "点击退出"
+        ]
+    },
+    "点击退出": {
+        "recognition": "OCR",
+        "expected":"退出",
+        "action": "LongPress",
+        "duration": 300
     }
 }
